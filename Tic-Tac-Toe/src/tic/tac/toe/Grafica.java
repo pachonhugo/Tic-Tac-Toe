@@ -13,6 +13,8 @@ public class Grafica extends javax.swing.JFrame {
 
     
     int turno;
+    Tablero mitablero=new Tablero();
+    
     
     public Grafica() {
         initComponents();
@@ -150,7 +152,12 @@ public class Grafica extends javax.swing.JFrame {
                     
         if(turno==0){
             Boton1.setText("X");
+            mitablero.ficha[0][0]="x";
+        }else{
+            Boton1.setText("O");
         }
+        
+        
         
         
         
