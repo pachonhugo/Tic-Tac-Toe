@@ -12,7 +12,7 @@ package tic.tac.toe;
 public class Grafica extends javax.swing.JFrame {
 
     
-    
+    int turno;
     
     public Grafica() {
         initComponents();
@@ -147,7 +147,13 @@ public class Grafica extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void Boton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton1MouseClicked
-        // TODO add your handling code here:
+                    
+        if(turno==0){
+            Boton1.setText("X");
+        }
+        
+        
+        
     }//GEN-LAST:event_Boton1MouseClicked
 
     /**
@@ -201,4 +207,8 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    void SetVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

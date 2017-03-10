@@ -16,7 +16,8 @@ public class Principal {
     
     public static void main(String[] args) {
             
-        
+        Grafica migrafica=new Grafica();
+        migrafica.SetVisible(true);
         
     }
     
