@@ -5,6 +5,8 @@
  */
 package tic.tac.toe;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estudiantes
@@ -16,8 +18,36 @@ public class Grafica extends javax.swing.JFrame {
     Tablero mitablero=new Tablero();
     
     
+    void limpiar() {
+     int k,j;
+        for(k=0;k<3;k++){
+            for(j=0;j<3;j++){
+                mitablero.ficha[k][j]='a';
+            }
+        }    
+        Boton1.setText("");
+        Boton2.setText("");
+        Boton3.setText("");
+        Boton4.setText("");
+        Boton5.setText("");
+        Boton6.setText("");
+        Boton7.setText("");
+        Boton8.setText("");
+        Boton9.setText("");    
+    
+    }
+
+    
+    
+    
     public Grafica() {
         initComponents();
+        int k,j;
+        for(k=0;k<3;k++){
+            for(j=0;j<3;j++){
+                mitablero.ficha[k][j]='a';
+            }
+        }
     }
 
     /**
@@ -38,10 +68,6 @@ public class Grafica extends javax.swing.JFrame {
         Boton7 = new javax.swing.JButton();
         Boton8 = new javax.swing.JButton();
         Boton9 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,15 +78,56 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        Boton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton2MouseClicked(evt);
             }
         });
 
-        jLabel1.setText("Nombre jugador  #2 (O)");
+        Boton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton3MouseClicked(evt);
+            }
+        });
 
-        jLabel2.setText("Nombre jugador  #1 (X)");
+        Boton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Boton4MouseEntered(evt);
+            }
+        });
+
+        Boton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton5MouseClicked(evt);
+            }
+        });
+
+        Boton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton6MouseClicked(evt);
+            }
+        });
+
+        Boton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton7MouseClicked(evt);
+            }
+        });
+
+        Boton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton8MouseClicked(evt);
+            }
+        });
+
+        Boton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Boton9MouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("TakaoPGothic", 0, 30)); // NOI18N
         jLabel3.setText("Vamos a jugar Tic-Tac-Toe");
@@ -85,21 +152,11 @@ public class Grafica extends javax.swing.JFrame {
                     .addComponent(Boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Boton9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Boton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
-                .addGap(36, 36, 36))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(493, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(51, 51, 51)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,51 +174,165 @@ public class Grafica extends javax.swing.JFrame {
                             .addComponent(Boton5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Boton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Boton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)))))
+                        .addComponent(Boton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(Boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Boton7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Boton8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Boton9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(65, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(128, 128, 128)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(306, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void Boton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton1MouseClicked
-                    
-        if(turno==0){
-            Boton1.setText("X");
-            mitablero.ficha[0][0]="x";
+        
+        if(mitablero.ficha[0][0]=='a'){
+           if(turno==0){
+                Boton1.setText("X");
+                mitablero.ficha[0][0]='X';
+            }else{
+                Boton1.setText("O");
+                mitablero.ficha[0][0]='O';
+            }
+           mitablero.calculartriqui();
         }else{
-            Boton1.setText("O");
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
         }
         
-        
-        
-        
-        
     }//GEN-LAST:event_Boton1MouseClicked
+
+    private void Boton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton2MouseClicked
+        if(mitablero.ficha[0][1]=='a'){
+           if(turno==0){
+                Boton2.setText("X");
+                mitablero.ficha[0][1]='X';
+            }else{
+                Boton2.setText("O");
+                mitablero.ficha[0][1]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+    }//GEN-LAST:event_Boton2MouseClicked
+
+    private void Boton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton3MouseClicked
+        if(mitablero.ficha[0][2]=='a'){
+           if(turno==0){
+                Boton3.setText("X");
+                mitablero.ficha[0][2]='X';
+            }else{
+                Boton3.setText("O");
+                mitablero.ficha[0][2]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+    }//GEN-LAST:event_Boton3MouseClicked
+
+    private void Boton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton4MouseEntered
+
+    private void Boton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton4MouseClicked
+        if(mitablero.ficha[1][0]=='a'){
+           if(turno==0){
+                Boton4.setText("X");
+                mitablero.ficha[1][0]='X';
+            }else{
+                Boton4.setText("O");
+                mitablero.ficha[1][0]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+
+    }//GEN-LAST:event_Boton4MouseClicked
+
+    private void Boton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton5MouseClicked
+
+        if(mitablero.ficha[1][1]=='a'){
+           if(turno==0){
+                Boton5.setText("X");
+                mitablero.ficha[1][1]='X';
+            }else{
+                Boton5.setText("O");
+                mitablero.ficha[1][1]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+        
+    }//GEN-LAST:event_Boton5MouseClicked
+
+    private void Boton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton6MouseClicked
+       
+        if(mitablero.ficha[1][2]=='a'){
+           if(turno==0){
+                Boton6.setText("X");
+                mitablero.ficha[1][2]='X';
+            }else{
+                Boton6.setText("O");
+                mitablero.ficha[1][2]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+    }//GEN-LAST:event_Boton6MouseClicked
+
+    private void Boton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton7MouseClicked
+
+       if(mitablero.ficha[2][0]=='a'){
+           if(turno==0){
+                Boton7.setText("X");
+                mitablero.ficha[2][0]='X';
+            }else{
+                Boton7.setText("O");
+                mitablero.ficha[2][0]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+    }//GEN-LAST:event_Boton7MouseClicked
+
+    private void Boton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton8MouseClicked
+         if(mitablero.ficha[2][1]=='a'){
+           if(turno==0){
+                Boton8.setText("X");
+                mitablero.ficha[2][1]='X';
+            }else{
+                Boton8.setText("O");
+                mitablero.ficha[2][1]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+    }//GEN-LAST:event_Boton8MouseClicked
+
+    private void Boton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton9MouseClicked
+        if(mitablero.ficha[2][2]=='a'){
+           if(turno==0){
+                Boton9.setText("X");
+                mitablero.ficha[2][2]='X';
+            }else{
+                Boton9.setText("O");
+                mitablero.ficha[2][2]='O';
+            }
+           mitablero.calculartriqui();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya se ha seleccionado esa casilla");
+        }
+    }//GEN-LAST:event_Boton9MouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,10 +362,8 @@ public class Grafica extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Grafica().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Grafica().setVisible(true);
         });
     }
 
@@ -208,14 +377,12 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JButton Boton7;
     private javax.swing.JButton Boton8;
     private javax.swing.JButton Boton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 
     void SetVisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
 }
